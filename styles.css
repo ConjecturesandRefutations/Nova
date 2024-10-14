@@ -28,6 +28,7 @@ html, body, .opening-section {
   font-family: 'sofachrome';
   text-shadow: 5px 5px 0 black;
   cursor: pointer;
+  margin-top: 100px;
 }
 
 #start-button:hover{
@@ -795,4 +796,10 @@ table{
     top: 45%;
     transform: translate(-50%,-50%);
 }
+}
+
+@media(max-width:400px){
+  #title{
+    font-size: 60px;
+  }
 }

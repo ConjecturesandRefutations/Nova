@@ -20,7 +20,7 @@ if (isset($_SESSION["user_id"])) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Nova</title>
         <meta name="description" content="Nova | Test your reflexes in this exciting HTML canvas game! Dodge oncoming asteroids and see how long you can survive. Simple controls, endless fun!" />
-        <link rel="shortcut icon" type="image/png" href="images/red-car.png"/>
+        <link rel="shortcut icon" type="image/png" href="images/Nova.png"/>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
         <link rel="stylesheet" href="styles.css" />
     </head>
@@ -68,13 +68,6 @@ if (isset($_SESSION["user_id"])) {
 
              <article class="play-music">
                 <p id="audio-button" class="audio"> CLICK <span id="sound">HERE</span> FOR OPENING MUSIC &ensp;</p><i class="fas fa-volume-mute" aria-hidden="true" id="volume-icon"></i>
-            </article>
-
-             <article class="music-credit">
-                <p> Opening Music from #Uppbeat (free for Creators!):<br/>
-                    https://uppbeat.io/t/alex-besss/psycho<br/>
-                    License code: WFG2A3BYXWQ1DJO8
-                </p>
             </article>
 
         </section>
