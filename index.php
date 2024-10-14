@@ -39,15 +39,19 @@ if (isset($_SESSION["user_id"])) {
         <section class="opening-section">
 
         <a class="login" href="<?php echo $user ? './php/logout.php' : './php/login.php'; ?>">
-             <?php echo $user ? 'LOGOUT' : 'LOGIN to save your score'; ?>
+             <?php echo $user ? 'LOGOUT' : 'LOGIN to save score'; ?>
         </a>
 
         <div class="top-ten-anchor">
-        <a href="php/top-scores.php">All-Time Top 10 Scores</a>
+        <a href="php/top-scores.php">Leaderboard</a>
             <?php if ($user): ?>
-                <a href="php/user-top-scores.php">Your 10 Best Scores</a>
+                <span style="color: red;"> | </span><a href="php/user-top-scores.php">Your 10 Best Scores</a>
             <?php endif; ?> 
             <?php ?>
+        </div>
+        
+        <div id="settings-link">
+                <p>Settings</p>
         </div>
 
             <div class="opening-text">
@@ -55,7 +59,7 @@ if (isset($_SESSION["user_id"])) {
                 <h1 id="title">Nova</h1>
 
                   <div class="top-ten-mobile">
-                    <a href="php/top-scores.php">All-Time Top 10</a>
+                    <a href="php/top-scores.php">Leaderboard</a>
             <?php if ($user): ?>
                 <a href="php/user-top-scores.php">Your Top 10</a>
             <?php endif; ?> 
@@ -67,7 +71,7 @@ if (isset($_SESSION["user_id"])) {
              </div>
 
              <article class="play-music">
-                <p id="audio-button" class="audio"> CLICK <span id="sound">HERE</span> FOR OPENING MUSIC &ensp;</p><i class="fas fa-volume-mute" aria-hidden="true" id="volume-icon"></i>
+                <p id="audio-button" class="audio"> OPENING MUSIC &ensp;</p><i class="fas fa-volume-mute" aria-hidden="true" id="volume-icon"></i>
             </article>
 
         </section>
@@ -85,6 +89,30 @@ if (isset($_SESSION["user_id"])) {
         </section>
 
   <canvas id="canvas" width="500" height="600"></canvas> 
+
+  <section class="settings">
+  <div class="settings-container">
+    <h3 class="choose-craft-title">Choose Spacecraft</h3>
+
+    <label for="spaceShipOne">
+      <img class="spaceship spaceship-one selected" src="images/Spaceship-One.png" alt="Spaceship One">
+      <input class="radio" type="radio" id="spaceShipOne" name="craftType" value="spaceship-one" onclick="handleShipChange(event)" checked>
+    </label>
+
+    <label for="spaceShipTwo">
+      <img class="spaceship spaceship-two" src="images/Spaceship-Two.png" alt="Spaceship Two">
+      <input class="radio" type="radio" id="spaceShipTwo" name="craftType" value="spaceship-two" onclick="handleShipChange(event)">
+    </label>
+
+    <label for="spaceShipThree">
+      <img class="spaceship spaceship-three" src="images/Spaceship-Three.png" alt="Spaceship Three">
+      <input class="radio" type="radio" id="spaceShipThree" name="craftType" value="spaceship-three" onclick="handleShipChange(event)">
+    </label>
+
+    <button class="go-back">Save Changes</button>
+  </div>
+</section>
+
 
 
     <section class="full-time">

@@ -219,11 +219,25 @@ button:hover{
 .play-music{
   cursor: pointer;
   position: absolute;
-  color: white;
   padding: none;
   display: flex;
   flex-direction: row;
-  border-radius: 5px;
+  left: 5%;
+}
+
+.play-music:hover #audio-button, .play-music:hover #volume-icon{
+  color: blue !important;
+}
+
+#audio-button{
+  color: red;
+  font-family: 'sofachrome';
+  text-shadow: 5px 5px 0 black;
+}
+
+#volume-icon{
+  color: red;
+  text-shadow: 5px 5px 0 black;
 }
 
 .fa,.fas{margin-top: 20px;}
@@ -326,22 +340,65 @@ button:hover{
 }
 
 .login{
-  background-color: red;
-  color: black;
+  color: red;
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 16px;
+  right: 5%;
   cursor: pointer;
-  padding: 10px;
   border-radius: 5px;
-  border: 1px solid black;
   text-decoration: none;
-  font-weight: bold;
+  font-family: 'sofachrome';
+  text-shadow: 5px 5px 0 black;
 }
 
 .login:hover{
-    background: black;
-    color: red
+    color: blue;
+}
+
+.settings{
+  display: none;
+}
+
+#settings-link p{
+  position: absolute;
+  color: red;
+  font-family: 'sofachrome';
+  right: 5%;
+  bottom: 16px;
+  cursor: pointer;
+  text-shadow: 5px 5px 0 black;
+}
+#settings-link p:hover{
+  color: blue;
+}
+
+.choose-craft-title{
+  color: red;
+  font-family: 'sofachrome';
+}
+  
+.spaceship{
+  max-height: 250px;
+  cursor: pointer;
+  border: 3px solid transparent;
+  border-radius: 10px;
+  transition: border-color 0.3s;
+}
+
+.spaceship.selected {
+  border-color: lightgreen !important;
+}
+
+.settings-container{
+  margin-left: 1%
+}
+
+.radio {
+  display: none;
+}
+
+label {
+  cursor: pointer;
 }
 
 @media(max-width:630px){
@@ -440,7 +497,7 @@ button:hover{
   }
 
 
-@media(max-width:506px){
+@media(max-width:700px){
   .login{
     font-size: small;
   }
@@ -721,15 +778,19 @@ th, td {
 
 .top-ten-anchor{
   position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translate(-50%);
+  bottom: 16px;
+  left: 5%;
 }
 
-.top-ten-anchor > a {
-  color: gold;
-  margin-right: 10px;
-  margin-left: 10px;
+.top-ten-anchor a{
+  color: red;
+  font-family: 'sofachrome';
+  text-decoration: none;
+  text-shadow: 5px 5px 0 black;
+}
+
+.top-ten-anchor a:hover{
+  color: blue;
 }
 
 .top-ten-mobile{

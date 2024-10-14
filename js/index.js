@@ -6,8 +6,8 @@ function startGame() {
   currentGame = new Game();
   ctx.drawImage(background, 0, 0, myCanvas.width, myCanvas.height); // draw background image
   // Instantiate a new Car
-  currentCar = new Car();
-  currentCar.drawCar();
+  currentShip = new Car();
+  currentShip.drawCar();
   animationFrameId = requestAnimationFrame(updateCanvas);
 
   // Add touch event listeners
@@ -50,7 +50,7 @@ function resetScore() {
     ctx.drawImage(background, 0, backgroundY, myCanvas.width, myCanvas.height);
     ctx.drawImage(background, 0, backgroundY - myCanvas.height, myCanvas.width, myCanvas.height);
 
-    currentCar.drawCar(); // redraw the Car at its current position
+    currentShip.drawCar(); // redraw the Car at its current position
     obstaclesFrequency++;
     //skullFrequency++;
 
@@ -100,8 +100,8 @@ function resetScore() {
          if (detectCollision(currentGame.obstacles[i])) {
           congrats.pause();
           crash.play();
-          currentCar.x = myCanvas.width/2;
-          currentCar.y = myCanvas.height/1.5;
+          currentShip.x = myCanvas.width/2;
+          currentShip.y = myCanvas.height/1.5;
           endGame();
         }       
               // Logic for removing obstacles 
@@ -198,8 +198,8 @@ function resetScore() {
         closing.play();
         closing.currentTime = 0;
         isGameOver = true;
-        currentCar.x = myCanvas.width/2
-        currentCar.y = myCanvas.height/1.25
+        currentShip.x = myCanvas.width/2
+        currentShip.y = myCanvas.height/1.25
         toggleOpening.style.display = 'none'
         toggleInfo.style.display = 'none'
         myCanvas.style.display = 'none'
@@ -238,10 +238,10 @@ xhr.send('score=' + currentGame.score + '&timestamp=' + formattedDate);
 
 
   function detectCollision(obstacle) {
-    return ((currentCar.x < obstacle.x + obstacle.width) &&         // check left side of element 
-    (currentCar.x + obstacle.width > obstacle.x) &&           // check right side
-    (currentCar.y < obstacle.y + obstacle.height) &&         // check top side
-    (currentCar.y + currentCar.height > obstacle.y));           // check bottom side
+    return ((currentShip.x < obstacle.x + obstacle.width) &&         // check left side of element 
+    (currentShip.x + obstacle.width > obstacle.x) &&           // check right side
+    (currentShip.y < obstacle.y + obstacle.height) &&         // check top side
+    (currentShip.y + currentShip.height > obstacle.y));           // check bottom side
   }
 
 

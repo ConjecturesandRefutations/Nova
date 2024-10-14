@@ -3,3 +3,9 @@ The favicon is taken from https://www.shutterstock.com/image-vector/sparkle-svg-
 Opening Music from #Uppbeat (free for Creators!):
 https://uppbeat.io/t/paulo-kalazzi/heros-time
 License code: GDSSZKIDE1UTOGKR
+
+Closing Music from #Uppbeat (free for Creators!):
+https://uppbeat.io/t/claude-patterns/pattern-22
+License code: O5BXHKFUKHABKGG0
+
+All spaceship images are created using DALLI prompts.

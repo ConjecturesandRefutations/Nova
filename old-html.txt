@@ -12,12 +12,12 @@
                     </h3>
                     <div class="options">
                       <img src="images/yellow-car.png" alt="yellow car" width="40" height="70">
-                      <input class="checkbox" type="checkbox" id="yellowCheckbox" name="color" value="yellow" onclick="handleColorChange(event)">
+                      <input class="checkbox" type="radio" id="yellowCheckbox" name="color" value="yellow" onclick="handleShipChange(event)">
                   
                       <img src="images/blue-car.png" alt="blue car" width="40" height="70">
-                      <input class="checkbox" type="checkbox" id="blueCheckbox" name="color" value="blue" checked onclick="handleColorChange(event)">
+                      <input class="checkbox" type="radio" id="blueCheckbox" name="color" value="blue" checked onclick="handleShipChange(event)">
                   
                       <img src="images/red-car.png" alt="red car" width="40" height="70">
-                      <input class="checkbox" type="checkbox" id="redCheckbox" name="color" value="hard" onclick="handleColorChange(event)">
+                      <input class="checkbox" type="radio" id="redCheckbox" name="color" value="hard" onclick="handleShipChange(event)">
                     </div>
                   </article>

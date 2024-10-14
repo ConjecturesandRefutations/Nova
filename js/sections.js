@@ -39,12 +39,14 @@ const toggleOpening = document.querySelector('.opening-section');
 const toggleInfo = document.querySelector('.info');
 const endScreen = document.querySelector('.full-time');
 const mobile = document.querySelector('.mobile-controls');
+const settingsLink = document.querySelector('#settings-link');
+const settingsPage = document.querySelector('.settings');
+const goBack = document.querySelector('.go-back');
 
 toggleOpening.style.display = '';
 endScreen.style.display = 'none';
 mobile.style.display = 'none';
 timer.style.display = 'none';
-
 
 //Game Area
 const myCanvas = document.getElementById('canvas');
@@ -52,6 +54,18 @@ const ctx = myCanvas.getContext('2d');
 
 myCanvas.style.display = 'none';
 toggleInfo.style.display = 'none';
+
+settingsLink.onclick = (event) => {
+  event.preventDefault(); // Prevent default behavior if necessary
+  toggleOpening.style.display = 'none';  // Hides the opening section
+  settingsPage.style.display = 'block';  // Shows the settings section
+};
+
+goBack.onclick = (event) => {
+  event.preventDefault(); // Prevent default behavior if necessary
+  toggleOpening.style.display = '';  // Hides the opening section
+  settingsPage.style.display = 'none';  // Shows the settings section
+};
 
 //Start Button
 window.onload = () => {
@@ -106,3 +120,4 @@ function restartGame() {
   isRestarting = false;
   restartButton.addEventListener('click', restartGame);
 }
+

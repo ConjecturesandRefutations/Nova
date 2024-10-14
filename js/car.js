@@ -1,71 +1,68 @@
-let currentColor = 'blue';
+let currentType = 'spaceship-one';
 
-function handleColorChange(event) {
+function handleShipChange(event) {
   event.stopPropagation();
+
+  // Remove the 'selected' class from all spaceship images
+  const spaceshipImages = document.querySelectorAll('.spaceship');
+  spaceshipImages.forEach(image => image.classList.remove('selected'));
+
+  // Get the associated label and find its image child
+  const selectedLabel = event.target.closest('label'); // Find the label for the clicked input
+  const selectedImage = selectedLabel.querySelector('img'); // Get the image inside the label
+  selectedImage.classList.add('selected'); // Add 'selected' to the image
+
+  // Set the current type
   if (event.target.checked) {
-    currentColor = event.target.value;
-    // Uncheck other checkboxes
-    const checkboxes = document.querySelectorAll('input[name="color"]');
-    checkboxes.forEach((checkbox) => {
-      if (checkbox !== event.target) {
-        checkbox.checked = false;
-      }
-    });
-  } else {
-    // Ensure that at least one checkbox is always checked
-    const checkedCheckboxes = document.querySelectorAll('input[name="color"]:checked');
-    if (checkedCheckboxes.length === 0) {
-      event.target.checked = true;
-    }
+    currentType = event.target.value;
   }
 }
 
-
 function addTouchListeners() {
   // Touch event handling for leftButton
-  currentCar.leftButton.ontouchstart = (event) => {
+  currentShip.leftButton.ontouchstart = (event) => {
     event.preventDefault();
-    currentCar.leftButtonDown = true;
-    currentCar.throttledLeftStart();
+    currentShip.leftButtonDown = true;
+    currentShip.throttledLeftStart();
   };
 
-  currentCar.leftButton.ontouchend = () => {
-    currentCar.leftButtonDown = false;
-    currentCar.stopMovingCar();
+  currentShip.leftButton.ontouchend = () => {
+    currentShip.leftButtonDown = false;
+    currentShip.stopMovingCar();
   };
 
   // Touch event handling for rightButton
-  currentCar.rightButton.ontouchstart = (event) => {
+  currentShip.rightButton.ontouchstart = (event) => {
     event.preventDefault();
-    currentCar.rightButtonDown = true;
-    currentCar.throttledRightStart();
+    currentShip.rightButtonDown = true;
+    currentShip.throttledRightStart();
   };
 
-  currentCar.rightButton.ontouchend = () => {
-    currentCar.rightButtonDown = false;
-    currentCar.stopMovingCar();
+  currentShip.rightButton.ontouchend = () => {
+    currentShip.rightButtonDown = false;
+    currentShip.stopMovingCar();
   };
 
   // Mouse event handling for leftButton
-  currentCar.leftButton.onmousedown = () => {
-    currentCar.leftButtonDown = true;
-    currentCar.throttledLeftStart();
+  currentShip.leftButton.onmousedown = () => {
+    currentShip.leftButtonDown = true;
+    currentShip.throttledLeftStart();
   };
 
-  currentCar.leftButton.onmouseup = () => {
-    currentCar.leftButtonDown = false;
-    currentCar.stopMovingCar();
+  currentShip.leftButton.onmouseup = () => {
+    currentShip.leftButtonDown = false;
+    currentShip.stopMovingCar();
   };
 
   // Mouse event handling for rightButton
-  currentCar.rightButton.onmousedown = () => {
-    currentCar.rightButtonDown = true;
-    currentCar.throttledRightStart();
+  currentShip.rightButton.onmousedown = () => {
+    currentShip.rightButtonDown = true;
+    currentShip.throttledRightStart();
   };
 
-  currentCar.rightButton.onmouseup = () => {
-    currentCar.rightButtonDown = false;
-    currentCar.stopMovingCar();
+  currentShip.rightButton.onmouseup = () => {
+    currentShip.rightButtonDown = false;
+    currentShip.stopMovingCar();
   };
 }
 
@@ -79,11 +76,11 @@ class Car {
       this.rotation = 0; // Rotation angle in degrees
 
 
-        // Variables to track button presses
-        this.leftButtonDown = false;
-        this.rightButtonDown = false;
+    // Variables to track button presses
+    this.leftButtonDown = false;
+    this.rightButtonDown = false;
     
-      // Variables to track button presses
+    // Variables to track button presses
     this.leftButtonDown = false;
     this.rightButtonDown = false;
     this.throttleDelay = 100; // Mobile Throttle Delay (Milliseconds)
@@ -107,15 +104,15 @@ class Car {
     }
     
     getImagePath() {
-      // Return the appropriate image path based on the currentColor
-      switch (currentColor) {
-        case 'yellow':
-          return './images/yellow-car.png';
-        case 'blue':
-          return './images/blue-car.png';
-        case 'red':
+      // Return the appropriate image path based on the currentType
+      switch (currentType) {
+        case 'spaceship-one':
+          return './images/Spaceship-One.png';
+        case 'spaceship-two':
+          return './images/Spaceship-Two.png';
+        case 'spaceship-three':
         default:
-          return './images/red-car.png';
+          return './images/Spaceship-Three.png';
       }
     }
 
