@@ -17,10 +17,10 @@ class Obstacle {
       const obstacleImg = new Image();
       obstacleImg.src =
       this.obstacleType === 'red'
-      ? './images/obstacleCarRed.png'
+      ? './images/asteroid-one.png'
       : this.obstacleType === 'blue'
-      ? './images/obstacleCarBlue.png'
-      : './images/obstacleCarYellow.png';
+      ? './images/asteroid-two.png'
+      : './images/asteroid-three.png';
       ctx.drawImage(obstacleImg, this.x, this.y, this.width, this.height);
     }
   }
