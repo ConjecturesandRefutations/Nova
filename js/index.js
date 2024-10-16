@@ -58,13 +58,10 @@ function resetScore() {
         //Draw an obstacle
         let randomObstacleX = Math.floor(Math.random() * myCanvas.width);
         let randomObstacleY = -50;
-        let randomObstacleWidth = 30;
-        let randomObstacleHeight = 50;
         let newObstacle = new Obstacle(
             randomObstacleX, 
             randomObstacleY, 
-            randomObstacleWidth, 
-            randomObstacleHeight);
+            );
   
         currentGame.obstacles.push(newObstacle);
         currentGame.score++;
@@ -238,10 +235,20 @@ xhr.send('score=' + currentGame.score + '&timestamp=' + formattedDate);
 
 
   function detectCollision(obstacle) {
-    return ((currentShip.x < obstacle.x + obstacle.width) &&         // check left side of element 
-    (currentShip.x + obstacle.width > obstacle.x) &&           // check right side
-    (currentShip.y < obstacle.y + obstacle.height) &&         // check top side
-    (currentShip.y + currentShip.height > obstacle.y));           // check bottom side
+    let leniency = 10;  // Default leniency
+  
+    // Remove leniency for 'bonus' or 'skull' type obstacles
+    if (obstacle.obstacleType === 'bonus' || obstacle.obstacleType === 'skull') {
+      leniency = 0; // No leniency for these types
+    }
+  
+    return (
+      (currentShip.x < obstacle.x + obstacle.width - leniency) &&   // check left side with leniency
+      (currentShip.x + currentShip.width > obstacle.x + leniency) &&  // check right side with leniency
+      (currentShip.y < obstacle.y + obstacle.height - 20) &&  // check top side with leniency
+      (currentShip.y + currentShip.height > obstacle.y + leniency)  // check bottom side with leniency
+    );
   }
+  
 
 

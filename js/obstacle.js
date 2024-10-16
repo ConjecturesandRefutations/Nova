@@ -2,9 +2,13 @@ class Obstacle {
     constructor(x, y, width, height) {
       this.x = x;
       this.y = y;
-      this.width =  30;
-      this.height =  50;
+      this.width = this.getRandomSize(20, 100); // random width between 20 and 100
+      this.height = this.getRandomSize(30, 120); // random height between 30 and 120
       this.obstacleType = this.getRandomColor();
+    }
+
+    getRandomSize(min, max) {
+      return Math.floor(Math.random() * (max - min + 1)) + min; // random size between min and max
     }
 
     getRandomColor() {
