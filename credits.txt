@@ -8,4 +8,11 @@ Closing Music from #Uppbeat (free for Creators!):
 https://uppbeat.io/t/claude-patterns/pattern-22
 License code: O5BXHKFUKHABKGG0
 
-All spaceship images are created using DALLI prompts.
+All spaceship images, the bonus rock image and asteroid images are created using DALLI prompts.
+
+The homepage background image is by <a href="https://unsplash.com/@aperturevintage?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Aperture Vintage</a> on <a href="https://unsplash.com/photos/starry-sky-Z6EpCdMcoUU?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+
+The canvas background image is by <a href="https://unsplash.com/@olenkasergienko?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Olena Bohovyk</a> on <a href="https://unsplash.com/photos/stars-in-the-sky-during-night-time-Cq5NaI0yKBE?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+  
+The game over screen background image is by <a href="https://unsplash.com/@scottrockphoto?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Scott Rock</a> on <a href="https://unsplash.com/photos/aurora-borealis-mfSY12Au5o4?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+  
