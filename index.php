@@ -113,8 +113,6 @@ if (isset($_SESSION["user_id"])) {
   </div>
 </section>
 
-
-
     <section class="full-time">
         <div class="full-time-text">
             <p>You Crashed!</p>

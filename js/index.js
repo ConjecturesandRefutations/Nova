@@ -129,7 +129,7 @@ function resetScore() {
                   } 
   }
 
-  for (let i = 0; i < currentGame.skulls.length; i++) {
+  /* for (let i = 0; i < currentGame.skulls.length; i++) {
     currentGame.skulls[i].y += 5; 
     currentGame.skulls[i].drawObstacle();
 
@@ -156,22 +156,23 @@ function resetScore() {
 
                       }
   }        
-
-      if (elapsedTimeInSeconds >= 20) { // Increase level every 20 seconds
-        congrats.play();
-        obstacleSpeed += 0.5;
-        currentGame.level++;
-        if (divisor > 2) {
-            divisor -= 2;
-        }
-        startTime = currentTime; // Reset the start time
-        level.innerText = currentGame.level;
-    
-        // Create a new bonus and add it to the bonuses array
-        const randomX = Math.floor(Math.random() * myCanvas.width);
-        const newBonus = new Bonus(randomX, -60); // Start above the canvas
-        currentGame.bonuses.push(newBonus);
+ */
+    if (elapsedTimeInSeconds >= 20) { // Increase level every 20 seconds
+      congrats.play();
+      obstacleSpeed += 0.5;
+      currentGame.level++;
+      if (divisor > 2) {
+          divisor -= 2;
       }
+      startTime = currentTime; // Reset the start time
+      level.innerText = currentGame.level;
+
+      // Create a new bonus and add it to the bonuses array
+      const maxX = myCanvas.width - 60; // Ensure the bonus box is fully within the canvas
+      const randomX = Math.floor(Math.random() * maxX);
+      const newBonus = new Bonus(randomX, -60); // Start above the canvas
+      currentGame.bonuses.push(newBonus);
+  }
     
     // Update and display countdown
     if (!isGameOver) {

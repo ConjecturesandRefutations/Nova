@@ -2,8 +2,8 @@ class Obstacle {
     constructor(x, y, width, height) {
       this.x = x;
       this.y = y;
-      this.width = this.getRandomSize(20, 100); // random width between 20 and 100
-      this.height = this.getRandomSize(30, 120); // random height between 30 and 120
+      this.width = this.getRandomSize(40, 90); // random width between 20 and 100
+      this.height = this.getRandomSize(40, 90); // random height between 30 and 120
       this.obstacleType = this.getRandomColor();
     }
 
@@ -31,13 +31,14 @@ class Obstacle {
   
   class Bonus extends Obstacle {
     constructor(x, y) {
-        super(x, y, 70, 50); 
-
+        super(x, y); // Call parent constructor
+        this.width = 60;  // Set fixed width for bonus box
+        this.height = 60; // Set fixed height for bonus box
         this.obstacleType = 'bonus';
     }
 
     drawObstacle() {
-        const obstacleImg = new Image(  );
+        const obstacleImg = new Image();
         obstacleImg.src = './images/gem.png'; 
         ctx.drawImage(obstacleImg, this.x, this.y, this.width, this.height);
     }
